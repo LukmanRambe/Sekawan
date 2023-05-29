@@ -106,6 +106,9 @@ header {
 	text-transform: uppercase;
 	letter-spacing: 0.3rem;
 	font-size: 1.8rem;
+	min-width: 44px;
+	min-height: 44px;
+	padding: 0.2rem;
 	font-weight: 700;
 	text-decoration: none;
 }
@@ -123,22 +126,29 @@ header {
 	gap: 2rem;
 }
 
-.nav-item .nav-link {
+.nav-item {
+	display: flex;
+	align-items: stretch;
+}
+
+.nav-link {
 	color: white;
-	text-decoration: none;
 	font-size: 1.1rem;
+	min-width: 44px;
+	padding: 0.7rem 0;
+	text-decoration: none;
 	letter-spacing: 0.15rem;
 	font-weight: 600;
 	transition: all ease-in-out 0.15s;
 }
 
-.nav-item .nav-link:hover,
-.nav-item .nav-link:focus {
+.nav-link:hover,
+.nav-link:focus {
 	color: var(--main-light-color);
 	outline: none;
 }
 
-.nav-item .nav-link:visited {
+.nav-link:visited {
 	color: white;
 	outline: none;
 }

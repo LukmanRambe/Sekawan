@@ -31,15 +31,18 @@
 		align-items: start;
 		justify-content: center;
 		width: 100%;
-		height: 10rem;
 		padding: 0;
-		gap: 1rem;
+		gap: 0.4rem;
 	}
 
 	.nav-item {
-		text-align: start;
 		width: 100%;
-		line-height: 2rem;
+	}
+
+	.nav-link {
+		width: 100%;
+		text-align: start;
+		line-height: 1.4rem;
 		border-bottom: 2px solid white;
 	}
 
@@ -59,15 +62,15 @@
 	}
 
 	.nav-logo {
-		font-size: 1.5rem;
+		font-size: 1.8rem;
 	}
 
 	.menu-button {
 		display: block;
-	}
-
-	.menu-button {
 		font-size: 1.5rem;
+		min-width: 44px;
+		min-height: 44px;
+		padding: 0.4rem;
 		color: white;
 		text-decoration: none;
 	}
