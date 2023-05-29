@@ -11,6 +11,8 @@ menuButton.addEventListener('click', (event) => {
 	drawer.classList.toggle('open');
 	if (drawer.classList.contains('open')) {
 		menuButton.innerHTML = '&#10006';
+	} else {
+		menuButton.innerHTML = '&#9776;';
 	}
 });
 
