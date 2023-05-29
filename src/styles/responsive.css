@@ -1,0 +1,230 @@
+:root {
+	--main-color: #b06a25;
+	--main-light-color: #d58d46;
+	--dark-background: #121212;
+	--light-background: #fffdd0;
+}
+
+@media only screen and (max-width: 767px) {
+	/* Start: Section Title */
+	.section-title {
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+	}
+	/* End: Section Title */
+
+	/* Start: Navbar */
+	#nav {
+		display: block;
+		padding: 1.5rem 1rem;
+	}
+
+	.nav-header {
+		width: 100%;
+	}
+
+	.nav-list {
+		transform: translate(-50rem, 0);
+		transition: all 0.15s ease-in-out;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: center;
+		width: 100%;
+		height: 10rem;
+		padding: 0;
+		gap: 1rem;
+	}
+
+	.nav-item {
+		text-align: start;
+		width: 100%;
+		line-height: 2rem;
+		border-bottom: 2px solid white;
+	}
+
+	#nav:has(.nav-list.open) {
+		padding: 1.5rem 1rem;
+		background-color: var(--main-color);
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		gap: 1rem;
+		height: 16.5rem;
+	}
+
+	.nav-list.open {
+		transform: translate(0, 0);
+	}
+
+	.nav-logo {
+		font-size: 1.5rem;
+	}
+
+	.menu-button {
+		display: block;
+	}
+
+	.menu-button {
+		font-size: 1.5rem;
+		color: white;
+		text-decoration: none;
+	}
+	/* End: Navbar */
+
+	/* Start: Hero */
+	.hero-copywrite {
+		padding: 0 1rem;
+	}
+
+	.hero-copywrite-title {
+		font-size: 2rem;
+	}
+
+	.hero-copywrite-subtitle {
+		font-size: 0.9rem;
+	}
+	/* End: Hero */
+
+	/* Start: About Us */
+	.about-us {
+		padding: 3rem 1rem;
+	}
+
+	.about-us-image {
+		display: none;
+	}
+
+	.about-us-copywrite-title {
+		font-size: 1.5rem;
+	}
+
+	.about-us-copywrite-subtitle {
+		font-size: 0.9rem;
+	}
+	/* End: About Us */
+
+	/* Start: Restaurant List */
+	.restaurant-list-content {
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 2rem;
+		padding: 0 1rem;
+	}
+
+	.restaurant-card:hover {
+		scale: 1.03;
+	}
+
+	.restaurant-card:hover .restaurant-card-header img {
+		scale: 1.02;
+	}
+
+	.restaurant-card-title {
+		font-size: 1.1rem;
+	}
+	/* End: Restaurant List */
+
+	/* Start: Footer */
+	.footer-text {
+		font-size: 0.9rem;
+	}
+	/* End: Footer */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+	/* Start: Section Title */
+	.section-title {
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+	}
+	/* End: Section Title */
+
+	/* Start: Navbar */
+	#nav {
+		padding: 1.5rem 2rem;
+	}
+	/* End: Navbar */
+
+	/* Start: Hero */
+	.hero-copywrite {
+		padding: 0 2rem;
+	}
+
+	.hero-copywrite-title {
+		font-size: 3rem;
+	}
+
+	.hero-copywrite-subtitle {
+		font-size: 1rem;
+	}
+	/* End: Hero */
+
+	/* Start: About Us */
+	.about-us {
+		padding: 3rem 2rem;
+	}
+
+	.about-us-image img {
+		width: 100%;
+		aspect-ratio: 4/6;
+	}
+
+	.about-us-copywrite-title {
+		font-size: 2rem;
+	}
+
+	.about-us-copywrite-subtitle {
+		font-size: 1rem;
+		margin-bottom: 2rem;
+	}
+	/* End: About Us */
+
+	/* Start: Restaurant List */
+	.restaurant-list-content {
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		gap: 2rem;
+		padding: 0 2rem;
+	}
+
+	.restaurant-card:hover {
+		scale: 1.03;
+	}
+
+	.restaurant-card:hover .restaurant-card-header img {
+		scale: 1.02;
+	}
+
+	.restaurant-card-title {
+		font-size: 1.1rem;
+	}
+	/* End: Restaurant List */
+
+	/* Start: Footer */
+	.footer-text {
+		font-size: 0.9rem;
+	}
+	/* End: Footer */
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+	.restaurant-list-content {
+		grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+		gap: 2rem;
+		padding: 0 2rem;
+	}
+
+	.about-us {
+		padding: 3rem 10rem;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	#hero {
+		min-width: 1000px;
+	}
+}
+@media only screen and (min-width: 1440px) {
+	.about-us {
+		padding: 3rem 20rem;
+	}
+}
