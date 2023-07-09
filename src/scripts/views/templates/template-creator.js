@@ -153,12 +153,12 @@ const createItemSkeletonLoadingTemplate = (count) => {
 
 const createFavoriteButtonTemplate = () => `
   <button aria-label="favorite this movie" id="favorite-button" class="favorite" title="Add To Favorite">
-    <i class="fa fa-heart-o" aria-hidden="true"></i>
+    <i class="fa-regular fa-heart fa-2x" aria-hidden="true"></i>
   </button>`;
 
 const createFavoritedButtonTemplate = () => `
   <button aria-label="unfavorite this movie" id="favorite-button" class="favorite" title="Remove From Favorite">
-    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa-solid fa-heart fa-2x" aria-hidden="true"></i>
   </button>
 `;
 
