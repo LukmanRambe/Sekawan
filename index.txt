@@ -1,0 +1,35 @@
+Requirement :
+
+1. Halaman Utama (Daftar Restoran)
+ - list restoran, (https://restaurant-api.dicoding.dev/)
+ - link to detail page
+ - hero
+
+2. Detail Restoran
+ - detail dari halaman utama/favorit
+ - harus ada nama, gambar, alamat, kota, deskripsi, menu makanan, menu minuman, customer reviews
+ - tombol favorit, gunakan IndexedDB
+
+3. Halaman Daftar Restoran Favorit
+ - nav link di navbar
+ - list restoran favorit dari IndexedDB
+ - nama, gambar, kota, rating, deskripsi
+ - link to detail page
+
+4. Native Capability
+ - bisa diakses offline
+ - menampilkan icon add to home screen
+ - punya custom icon pada home screen dan splash screen
+
+5. Code Quality
+ - gunakan ESLint
+
+6. Nilai Tambahan
+ - fitur add consumer review pada halaman detail
+ - menerapkan web component secara native menggunakan custom element
+ - page loading state
+ - page error state
+
+*Note*
+ - responsive
+ - accessiblity

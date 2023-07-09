@@ -10,8 +10,7 @@
 		"build": "webpack --config webpack.prod.js",
 		"serve": "http-server dist",
 		"build-serve": "npm run build && npm run serve",
-		"lint": "eslint .",
-		"lint-fix": "eslint . --fix"
+		"lint": "eslint ."
 	},
 	"keywords": [],
 	"author": "your_name <your.email@domain.com>",
