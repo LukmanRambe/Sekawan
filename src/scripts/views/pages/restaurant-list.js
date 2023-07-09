@@ -21,9 +21,9 @@ const RestaurantList = {
 					Cooked into perfection by our expert chefs
 				</p>
 
-				<a class="cta-button hero-cta" href="#main-content"
-					>Find Restaurant</a
-				>
+				<a class="cta-button hero-cta" href="#restaurant-list">
+					Find Restaurant
+				</a>
 			</article>
 		</section>
 		<!-- End: Hero -->
@@ -61,7 +61,7 @@ const RestaurantList = {
 		<!-- Start: About Us -->
 
 		<!-- Start: Restaurant List -->
-		<section class="restaurant-list">
+		<section id="restaurant-list" class="restaurant-list">
 			<h2 class="section-title restaurant-list-title">Our Restaurants</h2>
 
 			<article class="restaurant-list-content">
