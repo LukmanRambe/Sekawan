@@ -72,6 +72,9 @@
 		min-height: 44px;
 		padding: 0.4rem;
 		color: white;
+		background: transparent;
+		outline: none;
+		border: none;
 		text-decoration: none;
 	}
 
@@ -119,7 +122,7 @@
 
 	/* Start: Restaurant List */
 	.restaurant-list-content {
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
 		gap: 2rem;
 		padding: 0 1rem;
 	}
@@ -137,6 +140,109 @@
 	}
 	/* End: Restaurant List */
 
+	/* Start: Restaurant Detail */
+	.restaurant-detail-hero {
+		padding: 1rem;
+		gap: 1rem;
+		flex-direction: column;
+	}
+
+	.restaurant-detail-image img {
+		width: 100%;
+	}
+
+	.restaurant-detail-name {
+		font-size: 1.25rem;
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.restaurant-detail-overview {
+		font-size: 0.75rem;
+	}
+
+	.detail-star-icon {
+		max-width: 1.25rem;
+	}
+
+	.menus-list {
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.foods-list,
+	.drinks-list {
+		border: 5px double var(--main-color);
+		border-radius: 15px;
+		padding: 1.5rem 1rem;
+		width: calc(100vw - 1rem);
+	}
+
+	.foods-list-title,
+	.drinks-list-title {
+		font-size: 1.25rem;
+	}
+
+	.foods,
+	.drinks {
+		grid-template-columns: repeat(1, 1fr);
+		row-gap: 0rem;
+	}
+
+	.foods li,
+	.drinks li {
+		font-family: "Poppins", sans-serif;
+		font-size: 0.9rem;
+		font-weight: 500;
+	}
+
+	.customer-reviews {
+		padding: 3rem 1rem;
+	}
+
+	.customer-review-cards {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.customer-review-card {
+		max-width: none;
+		min-height: 10rem;
+		padding: 1rem;
+	}
+
+	.customer-review-name {
+		font-size: 1rem;
+	}
+
+	.customer-review-date {
+		font-size: 0.7rem;
+	}
+
+	.customer-review-text {
+		font-size: 0.8rem;
+	}
+	/* End: Restaurant Detail */
+
+	/* Start: Favorite Button */
+	#favorite-button-container {
+		bottom: 1rem;
+		right: 1rem;
+	}
+
+	#favorite-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 55px;
+		height: 55px;
+	}
+
+	#favorite-button i {
+		font-size: 1.45rem;
+	}
+	/* End: Favorite Button */
+
 	/* Start: Footer */
 	.footer-text {
 		font-size: 0.9rem;
@@ -144,7 +250,7 @@
 	/* End: Footer */
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
 	/* Start: Section Title */
 	.section-title {
 		font-size: 1.5rem;
@@ -212,6 +318,104 @@
 	}
 	/* End: Restaurant List */
 
+	/* Start: Restaurant Detail */
+	.restaurant-detail-hero {
+		padding: 2rem;
+		gap: 1rem;
+		flex-direction: column;
+	}
+
+	.restaurant-detail-image img {
+		width: 100%;
+	}
+
+	.restaurant-detail-name {
+		font-size: 1.5rem;
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.restaurant-detail-overview {
+		font-size: 0.9rem;
+	}
+
+	.detail-star-icon {
+		max-width: 1.5rem;
+	}
+
+	.menus-list {
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.foods-list,
+	.drinks-list {
+		padding: 1.5rem 2rem;
+		width: calc(100vw - 4rem);
+	}
+
+	.foods-list-title,
+	.drinks-list-title {
+		font-size: 1.5rem;
+	}
+
+	.foods,
+	.drinks {
+		grid-template-columns: repeat(3, 1fr);
+		row-gap: 0rem;
+	}
+
+	.foods li,
+	.drinks li {
+		font-size: 0.9rem;
+	}
+
+	.customer-reviews {
+		padding: 3rem 2rem;
+	}
+
+	.customer-review-cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.customer-review-card {
+		min-height: 11rem;
+		padding: 1rem;
+	}
+
+	.customer-review-name {
+		font-size: 1.15rem;
+	}
+
+	.customer-review-date {
+		font-size: 0.8rem;
+	}
+
+	.customer-review-text {
+		font-size: 0.9rem;
+	}
+	/* End: Restaurant Detail */
+
+	/* Start: Favorite Button */
+	#favorite-button-container {
+		bottom: 2rem;
+		right: 2rem;
+	}
+
+	#favorite-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 55px;
+		height: 55px;
+	}
+
+	#favorite-button i {
+		font-size: 1.45rem;
+	}
+	/* End: Favorite Button */
+
 	/* Start: Footer */
 	.footer-text {
 		font-size: 0.9rem;
@@ -220,15 +424,116 @@
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1440px) {
+	#nav {
+		padding: 1.5rem 3rem;
+	}
+
 	.restaurant-list-content {
 		grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
 		gap: 2rem;
-		padding: 0 2rem;
+		padding: 0 3rem;
 	}
 
 	.about-us {
 		padding: 3rem 10rem;
 	}
+
+	/* Start: Restaurant Detail */
+	.restaurant-detail-hero {
+		align-items: center;
+		padding: 3rem;
+		gap: 2rem;
+	}
+
+	.restaurant-detail-image img {
+		width: 29rem;
+	}
+
+	.restaurant-detail-name {
+		font-size: 1.5rem;
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.restaurant-detail-overview {
+		font-size: 0.75rem;
+	}
+
+	.detail-star-icon {
+		max-width: 1.5rem;
+	}
+
+	.menus-list {
+		gap: 3rem;
+	}
+
+	.foods-list,
+	.drinks-list {
+		padding: 1.5rem 2rem;
+		width: 27.5rem;
+	}
+
+	.foods-list-title,
+	.drinks-list-title {
+		font-size: 1.5rem;
+	}
+
+	.foods,
+	.drinks {
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: 0rem;
+	}
+
+	.foods li,
+	.drinks li {
+		font-size: 0.9rem;
+	}
+
+	.customer-reviews {
+		padding: 3rem;
+	}
+
+	.customer-review-cards {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.customer-review-card {
+		min-height: 11rem;
+		padding: 1rem;
+	}
+
+	.customer-review-name {
+		font-size: 1.15rem;
+	}
+
+	.customer-review-date {
+		font-size: 0.8rem;
+	}
+
+	.customer-review-text {
+		font-size: 0.9rem;
+	}
+	/* End: Restaurant Detail */
+
+	/* Start: Favorite Button */
+	#favorite-button-container {
+		bottom: 2rem;
+		right: 2rem;
+	}
+
+	#favorite-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 55px;
+		height: 55px;
+	}
+
+	#favorite-button i {
+		font-size: 1.45rem;
+	}
+	/* End: Favorite Button */
 }
 
 @media only screen and (min-width: 1200px) {
@@ -236,6 +541,7 @@
 		min-width: 1000px;
 	}
 }
+
 @media only screen and (min-width: 1440px) {
 	.about-us {
 		padding: 3rem 20rem;

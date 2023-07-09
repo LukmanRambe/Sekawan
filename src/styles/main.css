@@ -1,8 +1,9 @@
 :root {
 	--main-color: #b06a25;
 	--main-light-color: #d58d46;
-	--dark-background: #121212;
+	--dark-background: #303030;
 	--light-background: #fffdd0;
+	--text-color: #f6f6f6;
 }
 
 * {
@@ -12,15 +13,24 @@
 	scroll-behavior: smooth;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	width: 100%;
 	height: 100%;
 	font-size: 16px;
-	font-family: 'Oswald', sans-serif;
+	font-family: "Oswald", sans-serif;
 }
 
 header {
 	width: 100%;
+}
+
+main {
+	min-height: 100%;
+	background: var(--dark-background);
 }
 
 /* Start: Skip to Content */
@@ -29,7 +39,7 @@ header {
 	top: -5rem;
 	left: -5rem;
 	background-color: transparent;
-	color: white;
+	color: var(--text-color);
 	padding: 8px;
 	z-index: 10;
 	text-decoration: none;
@@ -55,10 +65,10 @@ header {
 	font-size: 1rem;
 	font-weight: 700;
 	text-decoration: none;
-	color: white;
+	color: var(--text-color);
 	text-align: center;
 	letter-spacing: 0.09rem;
-	transition: all ease-in-out 0.2s;
+	transition: all ease-in-out 0.15s;
 }
 
 .cta-button:hover {
@@ -78,7 +88,7 @@ header {
 	letter-spacing: 0.1rem;
 	text-transform: uppercase;
 	margin-bottom: 2rem;
-	color: white;
+	color: var(--text-color);
 }
 /* End: Section Title */
 
@@ -102,7 +112,7 @@ header {
 }
 
 .nav-logo {
-	color: white;
+	color: var(--text-color);
 	text-transform: uppercase;
 	letter-spacing: 0.3rem;
 	font-size: 1.8rem;
@@ -132,7 +142,7 @@ header {
 }
 
 .nav-link {
-	color: white;
+	color: var(--text-color);
 	font-size: 1.1rem;
 	min-width: 44px;
 	padding: 0.7rem 0;
@@ -149,7 +159,7 @@ header {
 }
 
 .nav-link:visited {
-	color: white;
+	color: var(--text-color);
 	outline: none;
 }
 
@@ -160,7 +170,7 @@ header {
 
 /* Start: Hero */
 #hero {
-	background-image: url('/src/public/images/heros/hero-image_2.jpg');
+	background-image: url("/src/public/images/heros/hero-image_2.jpg");
 	width: 100%;
 	height: 100dvh;
 	height: 100vh;
@@ -171,7 +181,7 @@ header {
 }
 
 #hero::after {
-	content: '';
+	content: "";
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.75);
@@ -193,7 +203,7 @@ header {
 }
 
 .hero-copywrite-title {
-	color: white;
+	color: var(--text-color);
 	font-size: 4rem;
 	margin-bottom: 1rem;
 	letter-spacing: 0.4rem;
@@ -204,12 +214,12 @@ header {
 .hero-copywrite-subtitle {
 	display: flex;
 	flex-direction: column;
-	color: white;
+	color: var(--text-color);
 	font-size: 0.9rem;
 	font-weight: 300;
 	margin-bottom: 2.5rem;
 	letter-spacing: 0.04rem;
-	font-family: 'Poppins', sans-serif;
+	font-family: "Poppins", sans-serif;
 }
 
 .hero-cta {
@@ -264,7 +274,7 @@ header {
 	font-size: 0.9rem;
 	font-weight: 400;
 	letter-spacing: 0.03rem;
-	font-family: 'Poppins', sans-serif;
+	font-family: "Poppins", sans-serif;
 	margin-bottom: 3.5rem;
 }
 /* End: About Us */
@@ -273,22 +283,21 @@ header {
 .restaurant-list {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 	background: var(--dark-background);
 	padding: 2.5rem 0;
+	min-height: 100%;
 	padding-bottom: 7rem;
 }
 
 .restaurant-list-title {
-	color: white;
+	color: var(--text-color);
 }
 
 .restaurant-list-content {
-	height: 100%;
 	width: 100%;
+	min-height: 100%;
 	display: grid;
-	justify-content: center;
 	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 	grid-gap: 6rem;
 	gap: 2rem;
@@ -299,7 +308,7 @@ header {
 	width: 100%;
 	height: 100%;
 	border-radius: 12px;
-	background: white;
+	background: var(--text-color);
 	padding-bottom: 1rem;
 	transition: all ease-out 0.15s;
 	position: relative;
@@ -348,7 +357,7 @@ header {
 
 .restaurant-card-body {
 	padding: 1rem;
-	font-family: 'Poppins', sans-serif;
+	font-family: "Poppins", sans-serif;
 }
 
 .restaurant-card-title {
@@ -381,7 +390,7 @@ header {
 	font-size: 0.8rem;
 }
 
-.restaurant-card-rating .star-icon {
+.star-icon {
 	width: 100%;
 	max-width: 0.9rem;
 	object-fit: cover;
@@ -395,10 +404,336 @@ header {
 }
 /* Start: Restaurant List */
 
+/* Start: Restaurant Detail */
+.restaurant-detail-content {
+	padding-top: 5rem;
+	background: var(--dark-background);
+}
+
+.restaurant-detail-hero {
+	display: flex;
+	align-items: start;
+	justify-content: space-between;
+	gap: 2rem;
+	padding: 5rem;
+	background: var(--dark-background);
+}
+
+.restaurant-detail-image {
+	width: 100%;
+}
+
+.restaurant-detail-image img {
+	width: 42rem;
+	object-fit: cover;
+	aspect-ratio: 14/10;
+	border: 5px double var(--main-color);
+}
+
+.restaurant-detail-copywrite {
+	color: var(--text-color);
+}
+
+.restaurant-detail-name {
+	font-size: 2.25rem;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	margin-bottom: 0.5rem;
+}
+
+.restaurant-detail-overview {
+	font-family: "Poppins", sans-serif;
+	letter-spacing: 0.1rem;
+	font-size: 0.85rem;
+	font-weight: 300;
+}
+
+.restaurant-detail-rating {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.detail-star-icon {
+	max-width: 2rem;
+}
+
+.restaurant-detail-address {
+	margin-top: 1rem;
+	font-weight: 500;
+}
+
+.restaurant-detail-categories {
+	font-weight: 500;
+	margin-bottom: 2rem;
+}
+
+.restaurant-detail-description {
+	text-align: justify;
+	word-break: break-all;
+}
+
+.restaurant-detail-menus {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	background: var(--light-background);
+	padding: 3rem 0;
+}
+
+.restaurant-detail-menus-title {
+	color: var(--dark-background);
+}
+
+.menus-list {
+	display: flex;
+	justify-content: space-between;
+	gap: 10rem;
+}
+
+.foods-list,
+.drinks-list {
+	border: 5px double var(--main-color);
+	border-radius: 15px;
+	padding: 2.5rem 2rem;
+	width: 30rem;
+}
+
+.foods-list-title,
+.drinks-list-title {
+	text-align: center;
+	font-size: 1.65rem;
+	margin-bottom: 2rem;
+	letter-spacing: 0.03rem;
+	text-transform: uppercase;
+}
+
+.foods,
+.drinks {
+	display: inline-grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 5rem;
+	row-gap: 0.7rem;
+	list-style-type: none;
+}
+
+.foods li,
+.drinks li {
+	font-family: "Poppins", sans-serif;
+	font-weight: 500;
+	font-size: 1.2rem;
+	margin-bottom: 0.5rem;
+	text-transform: capitalize;
+	letter-spacing: 0.03rem;
+}
+
+.customer-reviews {
+	display: flex;
+	flex-direction: column;
+	padding: 3rem 5rem;
+	align-items: center;
+	padding-bottom: 7rem;
+}
+
+.customer-review-cards {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
+	row-gap: 2rem;
+}
+
+.customer-review-card {
+	font-family: "Poppins", sans-serif;
+	width: 100%;
+	height: 100%;
+	min-height: 12rem;
+	padding: 1.25rem;
+	background: var(--text-color);
+	border-radius: 12px;
+}
+
+.customer-review-card-header {
+	margin-bottom: 1rem;
+}
+
+.customer-review-name {
+	font-size: 1.25rem;
+}
+
+.customer-review-date {
+	color: gray;
+	font-size: 0.8rem;
+	font-weight: 400;
+	letter-spacing: 0.05rem;
+}
+
+.customer-review-text {
+	font-size: 0.9rem;
+	letter-spacing: 0.03rem;
+}
+/* End: Restaurant Detail */
+
+/* Start: Favorite Button */
+#favorite-button-container {
+	position: fixed;
+	bottom: 3rem;
+	right: 3rem;
+}
+
+#favorite-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	color: var(--dark-background);
+	background: var(--main-color);
+	border: 2px solid transparent;
+	border-radius: 100%;
+	width: 65px;
+	height: 65px;
+	transition: all ease-in-out 0.2s;
+}
+
+#favorite-button i {
+	font-size: 1.5rem;
+}
+
+#favorite-button:hover {
+	cursor: pointer;
+	background: var(--main-light-color);
+	border: 2px solid transparent;
+	border-radius: 100%;
+}
+
+#favorite-button:active {
+	border: 2px solid var(--dark-background);
+}
+
+#favorite-button:focus {
+	outline: none;
+	border: 2px solid var(--dark-background);
+}
+/* End: Favorite Button */
+
+/* Start: Favorites Restaurant */
+.favorite-restaurant-list {
+	padding-top: 6rem;
+}
+
+.no-data {
+	color: var(--text-color);
+	font-size: 1.5rem;
+	text-align: center;
+	margin-top: 2rem;
+}
+/* End: Favorites Restaurant */
+
+/* Start: Skeleton */
+.restaurant-card-skeleton {
+	width: 100%;
+	height: 100%;
+	border-radius: 12px;
+	background: var(--text-color);
+	padding-bottom: 1rem;
+	transition: all ease-out 0.15s;
+	position: relative;
+}
+
+.restaurant-card-skeleton-header {
+	width: 100%;
+	height: 260px;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	overflow: hidden;
+	background: lightgray;
+	position: relative;
+}
+
+.restaurant-card-skeleton-body {
+	height: 168px;
+	padding: 1rem;
+	background: white;
+}
+
+.restaurant-card-skeleton-title {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 0.5rem;
+	width: 10rem;
+	height: 1.5rem;
+	background: lightgray;
+}
+
+.restaurant-card-skeleton-subtitle {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	gap: 0.5rem;
+}
+
+.restaurant-card-skeleton-city {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 1.25rem;
+	width: 3rem;
+	height: 1rem;
+	background: lightgray;
+}
+
+.restaurant-card-skeleton-rating {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 1.25rem;
+	width: 3rem;
+	height: 1rem;
+	background: lightgray;
+}
+
+.restaurant-card-skeleton-description {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 4.5rem;
+	background: lightgray;
+}
+
+.restaurant-card-skeleton-header::after,
+.restaurant-card-skeleton-title::after,
+.restaurant-card-skeleton-subtitle::after,
+.restaurant-card-skeleton-city::after,
+.restaurant-card-skeleton-rating::after,
+.restaurant-card-skeleton-description::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transform: translateX(-100%);
+	background-image: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0),
+		rgba(255, 255, 255, 0.2) 20%,
+		rgba(255, 255, 255, 0.5) 60%,
+		rgba(255, 255, 255, 0)
+	);
+	animation: shimmer 2s infinite;
+	content: "";
+}
+
+@keyframes shimmer {
+	100% {
+		transform: translateX(100%);
+	}
+}
+/* End: Skeleton */
+
 /* Start: Footer */
 footer {
 	width: 100%;
 	height: 5rem;
+	bottom: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
