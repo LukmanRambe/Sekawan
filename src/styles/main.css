@@ -596,10 +596,6 @@ main {
 	transition: all ease-in-out 0.2s;
 }
 
-#favorite-button i {
-	font-size: 1.5rem;
-}
-
 #favorite-button:hover {
 	cursor: pointer;
 	background: var(--main-light-color);

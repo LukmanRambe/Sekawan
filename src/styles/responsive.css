@@ -226,7 +226,7 @@
 
 	/* Start: Favorite Button */
 	#favorite-button-container {
-		bottom: 1rem;
+		bottom: 2rem;
 		right: 1rem;
 	}
 
@@ -236,10 +236,6 @@
 		justify-content: center;
 		width: 55px;
 		height: 55px;
-	}
-
-	#favorite-button i {
-		font-size: 1.45rem;
 	}
 	/* End: Favorite Button */
 
@@ -410,10 +406,6 @@
 		width: 55px;
 		height: 55px;
 	}
-
-	#favorite-button i {
-		font-size: 1.45rem;
-	}
 	/* End: Favorite Button */
 
 	/* Start: Footer */
@@ -528,10 +520,6 @@
 		justify-content: center;
 		width: 55px;
 		height: 55px;
-	}
-
-	#favorite-button i {
-		font-size: 1.45rem;
 	}
 	/* End: Favorite Button */
 }
