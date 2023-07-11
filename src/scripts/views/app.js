@@ -28,6 +28,26 @@ class App {
 		});
 		this.content.innerHTML = await page.render();
 		await page.afterRender();
+
+		const skipToContent = document.querySelector(".skip-to-content");
+		const restaurantList = document.querySelector(
+			"#main-content .restaurant-list"
+		);
+		const restaurantDetail = document.querySelector(
+			".restaurant-detail-content"
+		);
+
+		skipToContent.addEventListener("click", (event) => {
+			event.preventDefault();
+
+			if (url === "/detail/:id") {
+				restaurantDetail.scrollIntoView({ behavior: "smooth" });
+			} else {
+				restaurantList.scrollIntoView({ behavior: "smooth" });
+			}
+
+			skipToContent.blur();
+		});
 	}
 }
 
