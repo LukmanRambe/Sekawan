@@ -26,7 +26,9 @@ const createRestaurantItemTemplate = (restaurant) => `
 			</p>
 		</article>
 
-		<a href="/#/detail/${restaurant.id}" class="restaurant-card-overlay"></a>
+		<a href="/#/detail/${restaurant.id}" class="restaurant-card-overlay">
+			${restaurant.name}
+		</a>
 	</article>
 `;
 
