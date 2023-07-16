@@ -20,14 +20,24 @@ class App {
 	}
 
 	async renderPage() {
-		const url = UrlParser.parseActiveUrlWithCombiner();
-		const page = routes[url];
+		let url = UrlParser.parseActiveUrlWithCombiner();
+
+		if (!(url in routes)) {
+			window.location.hash = "#/";
+			url = UrlParser.parseActiveUrlWithCombiner();
+		}
+
+		const page = await routes[url];
+		this.content.innerHTML = await page.render();
+		await page.afterRender();
+		const loadingSpinner = document.querySelector(".loading-spinner");
+		loadingSpinner.style.display = "none";
+		document.body.style.overflow = "auto";
 
 		scrollTo({
 			top: 0,
+			behavior: "instant",
 		});
-		this.content.innerHTML = await page.render();
-		await page.afterRender();
 
 		const skipToContent = document.querySelector(".skip-to-content");
 		const restaurantList = document.querySelector(

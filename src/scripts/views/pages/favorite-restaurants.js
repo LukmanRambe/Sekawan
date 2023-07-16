@@ -2,6 +2,7 @@ import FavoriteRestaurantsIdb from "../../data/favorite-restaurants-idb";
 import {
 	createRestaurantItemTemplate,
 	createItemSkeletonLoadingTemplate,
+	createEmptyDataTemplate,
 } from "../templates/template-creator";
 
 const RestaurantList = {
@@ -21,6 +22,7 @@ const RestaurantList = {
 
 	async afterRender() {
 		const restaurantsData = await FavoriteRestaurantsIdb.getAllRestaurants();
+
 		const restaurantsContainer = document.querySelector(
 			".restaurant-list-content"
 		);
@@ -28,16 +30,22 @@ const RestaurantList = {
 		restaurantsContainer.innerHTML = "";
 		if (restaurantsData?.length > 0) {
 			restaurantsData.forEach((restaurant) => {
-				restaurantsContainer.innerHTML +=
-					createRestaurantItemTemplate(restaurant);
+				const imageLink = document.createElement("link");
+				imageLink.rel = "preload";
+				imageLink.as = "image";
+				imageLink.href = `https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}`;
+				document.body.appendChild(imageLink);
+
+				restaurantsContainer.innerHTML += createRestaurantItemTemplate(
+					restaurant,
+					true
+				);
 			});
 		} else {
-			restaurantsContainer.classList.remove("restaurant-list-content");
-			restaurantsContainer.innerHTML += `
-				<article class="no-data">
-					<p>No Favorite Restaurant</p>
-				</article>
-			`;
+			restaurantsContainer.style.display = "flex";
+			restaurantsContainer.innerHTML += createEmptyDataTemplate(
+				"There is No Favorite Restaurant"
+			);
 		}
 	},
 };

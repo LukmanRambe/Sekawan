@@ -222,6 +222,10 @@
 	.customer-review-text {
 		font-size: 0.8rem;
 	}
+
+	.review-form-container {
+		width: 100%;
+	}
 	/* End: Restaurant Detail */
 
 	/* Start: Favorite Button */
@@ -390,6 +394,10 @@
 
 	.customer-review-text {
 		font-size: 0.9rem;
+	}
+
+	.review-form-container {
+		width: 100%;
 	}
 	/* End: Restaurant Detail */
 
