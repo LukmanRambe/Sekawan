@@ -98,7 +98,10 @@ const createRestaurantItemTemplate = (restaurant, isFavoriteList) => `
 				<div class="restaurant-card-rating">
 					<figure>
 						<picture>
-							<source type="image/webp" srcset="./images/star-icon.webp" />
+							<source
+								media="(min-width: 600px)"
+								type="image/webp"
+								srcset="./images/star-icon.webp" />
 							<source
 								media="(max-width: 600px)"
 								type="image/png"
@@ -106,8 +109,8 @@ const createRestaurantItemTemplate = (restaurant, isFavoriteList) => `
 							<img
 								width="14"
 								height="20"
-								class="star-icon lazyload"
-								data-src="./images/star-icon-large.png"
+								class="star-icon"
+								src="./images/star-icon-large.png"
 								alt="Logo Bintang atau Rating" />
 						</picture>
 					</figure>
@@ -156,6 +159,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 								<figure>
 									<picture>
 										<source
+											media="(min-width: 600px)"
 											type="image/webp"
 											srcset="./images/star-icon.webp" />
 										<source
@@ -165,8 +169,9 @@ const createRestaurantDetailTemplate = (restaurant) => `
 										<img
 											width="32"
 											height="32"
-											class="detail-star-icon lazyload"
-											data-src="./images/star-icon-large.png"
+											class="detail-star-icon"
+											type="image/png"
+											src="./images/star-icon-large.png"
 											alt="Logo Bintang atau Rating" />
 									</picture>
 								</figure>

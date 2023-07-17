@@ -13,18 +13,18 @@ const RestaurantList = {
 				<figure class="hero-image">
 					<picture>
 						<source
+							media="(min-width: 600px)"
 							type="image/webp"
-							class="lazyload"
-							data-srcset="./images/hero-image.webp" />
+							srcset="images/hero-image.webp" />
 						<source
 							media="(max-width: 600px)"
 							type="image/jpeg"
-							class="lazyload"
-							data-srcset="./images/hero-image-small.jpg" />
+							srcset="images/hero-image-small.jpg" />
 						<img
-							width="14"
-							height="20"
-							data-src="./images/hero-image-large.jpg"
+							width="1350"
+							height="900"
+							type="image/jpeg"
+							src="images/hero-image-large.jpg"
 							alt="Hero Image" />
 					</picture>
 				</figure>
@@ -55,19 +55,18 @@ const RestaurantList = {
 					<figure class="about-us-image">
 						<picture>
 							<source
+								media="(min-width: 600px)"
 								type="image/webp"
-								class="lazyload"
-								data-srcset="./images/about-us.webp" />
+								srcset="./images/about-us.webp" />
 							<source
 								media="(max-width: 600px)"
 								type="image/jpeg"
-								class="lazyload"
-								data-srcset="./images/about-us-small.jpg" />
+								srcset="./images/about-us-small.jpg" />
 							<img
 								width="272"
 								height="398"
-								class="lazyload"
-								data-src="./images/about-us-large.jpg"
+								type="image/jpeg"
+								src="./images/about-us-large.jpg"
 								alt="Plating process by a chef" />
 						</picture>
 					</figure>
