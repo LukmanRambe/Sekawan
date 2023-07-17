@@ -1,7 +1,12 @@
 import TheRestaurantSource from "../../data/restaurants";
 import UrlParser from "../../routes/url-parser";
-import { createRestaurantDetailTemplate } from "../templates/template-creator";
-import FavoriteButtonInitiator from "../../utils/favorite-button-initiator";
+import {
+	createRestaurantDetailTemplate,
+	createFailedToFetchDataTemplate,
+} from "../templates/template-creator";
+import FavoriteButtonPresenter from "../../utils/favorite-button-presenter";
+import FavoriteRestaurantsIdb from "../../data/favorite-restaurants-idb";
+import RestaurantReviewFormPresenter from "../../utils/restaurant-review-form-initiator";
 
 const RestaurantDetail = {
 	async render() {
@@ -27,10 +32,20 @@ const RestaurantDetail = {
 			"#favorite-button-container"
 		);
 
+		if (restaurantData.error) {
+			restaurantDetailContainer.style.display = "flex";
+			restaurantDetailContainer.innerHTML += createFailedToFetchDataTemplate(
+				"Failed To Retrieve Restaurant Data"
+			);
+
+			return;
+		}
+
 		restaurantDetailContainer.innerHTML =
 			createRestaurantDetailTemplate(restaurant);
-		FavoriteButtonInitiator.init({
+		FavoriteButtonPresenter.init({
 			favoriteButtonContainer,
+			favoriteRestaurants: FavoriteRestaurantsIdb,
 			restaurant: {
 				id: restaurant.id,
 				name: restaurant.name,
@@ -46,6 +61,14 @@ const RestaurantDetail = {
 				},
 				customerReviews: restaurant.customerReviews,
 			},
+		});
+
+		const restaurantReviewForm = document.querySelector(".review-form");
+
+		RestaurantReviewFormPresenter.init({
+			restaurantReviewForm,
+			restaurantReview: TheRestaurantSource,
+			restaurantId: restaurant.id,
 		});
 	},
 };

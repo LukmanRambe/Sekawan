@@ -22,6 +22,7 @@ body {
 	height: 100%;
 	font-size: 16px;
 	font-family: "Oswald", sans-serif;
+	overflow: hidden;
 }
 
 header {
@@ -31,6 +32,49 @@ header {
 main {
 	min-height: 100%;
 	background: var(--dark-background);
+}
+
+.loading-spinner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background-color: var(--dark-background);
+	z-index: 100;
+}
+
+.spinner {
+	width: 48px;
+	height: 48px;
+	border: 5px solid #fff;
+	border-bottom-color: var(--main-color);
+	border-radius: 50%;
+	display: inline-block;
+	box-sizing: border-box;
+	animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.fetch-failed {
+	color: var(--text-color);
+	font-size: 1.25rem;
+	text-align: center;
+	width: 100%;
+	letter-spacing: 0.03rem;
+	padding: 3rem 1rem;
 }
 
 /* Start: Skip to Content */
@@ -149,18 +193,13 @@ main {
 	text-decoration: none;
 	letter-spacing: 0.15rem;
 	font-weight: 600;
-	transition: all ease-in-out 0.15s;
 }
 
 .nav-link:hover,
 .nav-link:focus {
 	color: var(--main-light-color);
 	outline: none;
-}
-
-.nav-link:visited {
-	color: var(--text-color);
-	outline: none;
+	transition: all ease-in-out 0.12s;
 }
 
 .menu-button {
@@ -170,14 +209,10 @@ main {
 
 /* Start: Hero */
 #hero {
-	background-image: url("/src/public/images/heros/hero-image_2.jpg");
 	width: 100%;
 	height: 100dvh;
 	height: 100vh;
-	background-repeat: no-repeat;
-	background-size: cover;
 	position: relative;
-	top: 0;
 }
 
 #hero::after {
@@ -188,6 +223,14 @@ main {
 	position: absolute;
 	top: 0;
 	left: 0;
+}
+
+.hero-image source,
+.hero-image img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .hero-copywrite {
@@ -299,7 +342,6 @@ main {
 	min-height: 100%;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-	grid-gap: 6rem;
 	gap: 2rem;
 	padding: 0 5rem;
 }
@@ -380,7 +422,7 @@ main {
 }
 
 .restaurant-card-city {
-	color: gray;
+	color: #545454;
 	font-weight: 400;
 	letter-spacing: 0.05rem;
 }
@@ -395,7 +437,6 @@ main {
 
 .star-icon {
 	width: 100%;
-	max-width: 0.9rem;
 	object-fit: cover;
 }
 
@@ -455,10 +496,12 @@ main {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
+	width: 100%;
 }
 
 .detail-star-icon {
-	max-width: 2rem;
+	width: 100%;
+	min-width: 2rem;
 }
 
 .restaurant-detail-address {
@@ -566,7 +609,7 @@ main {
 }
 
 .customer-review-date {
-	color: gray;
+	color: #545454;
 	font-size: 0.8rem;
 	font-weight: 400;
 	letter-spacing: 0.05rem;
@@ -575,6 +618,84 @@ main {
 .customer-review-text {
 	font-size: 0.9rem;
 	letter-spacing: 0.03rem;
+}
+
+.review-form-container {
+	width: 40rem;
+	border: 2px solid var(--main-light-color);
+	padding: 2rem 1.25rem;
+	margin-top: 7rem;
+	border-radius: 12px;
+}
+
+.review-form-title {
+	color: var(--text-color);
+	font-size: 1.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.025rem;
+	margin-bottom: 2rem;
+}
+
+.review-form-container form {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.review-form-control {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.review-form-label {
+	color: var(--text-color);
+	font-size: 1.12rem;
+	letter-spacing: 0.025rem;
+}
+
+.review-form-input {
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+	outline: none;
+	color: var(--text-color);
+	caret-color: var(--main-color);
+	width: 100%;
+	padding: 0.75rem;
+	font-size: 0.9rem;
+	border: 1px solid var(--main-light-color);
+	background-color: var(--dark-background);
+	border-radius: 5px;
+	letter-spacing: 0.012rem;
+	resize: none;
+}
+
+.review-form-input::placeholder {
+	color: gray;
+	font-weight: 300;
+}
+
+.review-form .cta-button {
+	cursor: pointer;
+}
+
+.review-form-error-text {
+	display: none;
+	color: rgba(255, 37, 44, 0.9);
+	letter-spacing: 0.05rem;
+	border-radius: 5px;
+}
+
+.submit-review-button.success {
+	color: var(--text-color);
+	background-color: rgb(52, 165, 52);
+	outline: none;
+}
+
+.submit-review-button.failed {
+	color: var(--text-color);
+	background-color: rgba(255, 37, 44, 0.9);
+	outline: none;
 }
 /* End: Restaurant Detail */
 
@@ -625,6 +746,7 @@ main {
 	color: var(--text-color);
 	font-size: 1.5rem;
 	text-align: center;
+	width: 100%;
 	margin-top: 2rem;
 }
 /* End: Favorites Restaurant */

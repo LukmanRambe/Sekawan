@@ -15,14 +15,18 @@ const FavoriteRestaurantsIdb = {
 	},
 
 	async getRestaurant(id) {
+		if (!id) {
+			return;
+		}
+
 		return (await dbPromise).get(OBJECT_STORE_NAME, id);
 	},
 
-	async addRestaurant(restaurant) {
-		return (await dbPromise).add(OBJECT_STORE_NAME, restaurant);
-	},
-
 	async putRestaurant(restaurant) {
+		if (!restaurant.hasOwnProperty("id")) {
+			return;
+		}
+
 		return (await dbPromise).put(OBJECT_STORE_NAME, restaurant);
 	},
 
