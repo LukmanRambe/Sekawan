@@ -1,5 +1,5 @@
 # Sekawan-Restaurant
-Restaurant Catalogue Website. Submission for "Menjadi Front-End Web Developer Expert" (https://www.dicoding.com/academies/219) Dicoding Class.
+Restaurant Catalogue Website. Submission for [Menjadi Front-End Web Developer Expert](https://www.dicoding.com/academies/219) Dicoding Class.
 
 This is a Progressive Web App, using stale while revalidate cache method. User can add a restaurant to favorite list that will be saved to Browser's IndexDB and give a review.
 
